@@ -1,0 +1,41 @@
+body {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    background-color: #161614;
+    height: 600px;
+    width: 400px;
+    padding: 32px;
+    gap: 32px;
+}
+
+.display {
+    background-color: #302d2d;
+    color: white;
+    height: 15%;
+    width: 100%;
+
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    height: 85%;
+}
+
+.calcButton {
+    flex-basis: 25%;
+}
+
+#zero {
+    flex-basis: 50%;
+}
