@@ -21,11 +21,19 @@ body {
 }
 
 .display {
+    box-sizing: border-box;
+    display: flex;
     background-color: #302d2d;
     color: white;
     height: 20%;
     width: 100%;
     margin-top: 8px;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 32px;
+    font-weight: 500;
+    padding: 0px 8px 0px 0px;
 }
 
 .buttons {
@@ -41,6 +49,7 @@ body {
     font-size: 32px;
     font-weight: 600;
     border: 6px solid #161614;
+    transition: all 0.05s ease-in-out;
 }
 
 #zero {
@@ -56,4 +65,12 @@ body {
 .calcButton.number, #decimal {
     background-color: rgb(66, 66, 66);
     color: white;
+}
+
+.calcButton:hover, #decimal:hover, #equal:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.288);
+}
+
+.top:hover {
+    box-shadow: inset 0 0 100px 100px rgba(19, 18, 18, 0.329);
 }

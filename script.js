@@ -4,7 +4,8 @@ const display = document.querySelector(".display");
 const equalButton = document.querySelector("#equal");
 const AC = document.querySelector("#AC");
 const C = document.querySelector("#C");
-const signChanger = document.querySelector("#negative")
+const signChanger = document.querySelector("#negative");
+const decimalButton = document.querySelector("#decimal");
 
 let operator = '';
 let firstNumber = '';
@@ -81,6 +82,8 @@ const operate = (num1, num2, operator) => {
     else if (operator === "×")
         return multiply(num1, num2);
     else if (operator === "÷")
+        if (num2 === 0)
+            return "ERROR!";
         return divide(num1, num2);
 }
 
