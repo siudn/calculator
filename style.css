@@ -48,12 +48,12 @@ body {
     border-radius: 50px;
 }
 
-.calcButton.operator {
+.calcButton.operator, #equal {
     background-color: rgb(194, 119, 20);
     color: white;
 }
 
-.calcButton.number {
+.calcButton.number, #decimal {
     background-color: rgb(66, 66, 66);
     color: white;
 }
