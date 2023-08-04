@@ -27,11 +27,9 @@ operatorButtons.forEach(button => {
 })
 
 equalButton.addEventListener("click", () => {
-    display.textContent = operate(firstNumber, secondNumber, operator);
+    firstNumber = operate(firstNumber, secondNumber, operator);
+    display.textContent = firstNumber;
 })
-
-
-
 
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b
