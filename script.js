@@ -5,32 +5,32 @@ const equalButton = document.querySelector("#equal");
 const clearAll = document.querySelector("#AC");
 const clear = document.querySelector("#C");
 
-let firstNumber = 0;
-let secondNumber = 0;
-let operator = '';
+let operator ='';
+let firstNumber = '';
+let secondNumber ='';
 
 numberButtons.forEach(button => {
     button.addEventListener("click", () => {
-        display.textContent += button.textContent;
-        if (operator === '')
-            firstNumber = Number(display.textContent);
-        else
-            secondNumber = Number(display.textContent);
+        display.textContent = appendNumber(button.innerText);
     })
 })
 
 operatorButtons.forEach(button => {
     button.addEventListener("click", () => {
-        if (secondNumber !== 0)
-            equals()
-        operator = button.textContent;
-        display.textContent = '';
+        operator = button.innerText;
     })
 })
 
 equalButton.addEventListener("click", () => {
-    equals();
+    display.textContent = equals();
 })
+
+function appendNumber(value) {
+    if (operator === '')
+        return firstNumber += value;
+    else
+        return secondNumber += value;
+}
 
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b
@@ -44,12 +44,14 @@ const operate = (num1, num2, operator) => {
         return subtract(num1, num2);
     else if (operator === "×")
         return multiply(num1, num2);
-    else if (operator === "/")
+    else if (operator === "÷")
         return divide(num1, num2);
 }
 
-const equals = () => {
-    firstNumber = operate(firstNumber, secondNumber, operator);
-    display.textContent = firstNumber;
+function equals() {
+    let num1 = Number(firstNumber);
+    let num2 = Number(secondNumber);
+    firstNumber = operate(num1, num2, operator);
+    secondNumber = '';
+    return firstNumber;
 }
-
