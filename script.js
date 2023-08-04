@@ -21,14 +21,15 @@ numberButtons.forEach(button => {
 
 operatorButtons.forEach(button => {
     button.addEventListener("click", () => {
+        if (secondNumber !== 0)
+            equals()
         operator = button.textContent;
         display.textContent = '';
     })
 })
 
 equalButton.addEventListener("click", () => {
-    firstNumber = operate(firstNumber, secondNumber, operator);
-    display.textContent = firstNumber;
+    equals();
 })
 
 const add = (a, b) => a + b;
@@ -45,5 +46,10 @@ const operate = (num1, num2, operator) => {
         return multiply(num1, num2);
     else if (operator === "/")
         return divide(num1, num2);
+}
+
+const equals = () => {
+    firstNumber = operate(firstNumber, secondNumber, operator);
+    display.textContent = firstNumber;
 }
 
