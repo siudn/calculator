@@ -12,10 +12,11 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #161614;
+    align-items:center;
     height: 600px;
     width: 400px;
-    padding: 32px;
-    gap: 16px;
+    padding: 16px;
+    gap: 8px;
     border-radius: 25px;
 }
 
@@ -24,13 +25,13 @@ body {
     color: white;
     height: 20%;
     width: 100%;
-
+    margin-top: 8px;
 }
 
 .buttons {
     display: flex;
     flex-wrap: wrap;
-    height: 85%;
+    height: 100%;
 }
 
 .calcButton {
@@ -39,12 +40,12 @@ body {
     border-radius: 50%;
     font-size: 32px;
     font-weight: 600;
-    border: 8px solid #161614;
+    border: 6px solid #161614;
 }
 
 #zero {
     flex-basis: 50%;
-    border-radius: 25px;
+    border-radius: 50px;
 }
 
 .calcButton.operator {
