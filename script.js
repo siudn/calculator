@@ -2,12 +2,13 @@ const numberButtons = document.querySelectorAll(".number");
 const operatorButtons = document.querySelectorAll(".operator");
 const display = document.querySelector(".display");
 const equalButton = document.querySelector("#equal");
-const clearAll = document.querySelector("#AC");
-const clear = document.querySelector("#C");
+const AC = document.querySelector("#AC");
+const C = document.querySelector("#C");
+const signChanger = document.querySelector("#negative")
 
-let operator ='';
+let operator = '';
 let firstNumber = '';
-let secondNumber ='';
+let secondNumber = '';
 
 numberButtons.forEach(button => {
     button.addEventListener("click", () => {
@@ -25,11 +26,46 @@ equalButton.addEventListener("click", () => {
     display.textContent = equals();
 })
 
+AC.addEventListener("click", () => clearAll())
+C.addEventListener("click", () => clearCurrent())
+signChanger.addEventListener("click", () => display.textContent = changeSign())
+
+function clearAll() {
+    display.textContent = '';
+    firstNumber = '';
+    secondNumber = '';
+    operator = '';
+}
+
+function clearCurrent() {
+    display.textContent = '';
+    if (operator === '')
+        return firstNumber = '';
+    else
+        return secondNumber = '';
+}
+
+function changeSign() {
+    if (operator === '') {
+        return firstNumber *= -1;
+    } else
+        return secondNumber *= -1;
+}
+
 function appendNumber(value) {
     if (operator === '')
         return firstNumber += value;
     else
         return secondNumber += value;
+}
+
+function equals() {
+    let num1 = Number(firstNumber);
+    let num2 = Number(secondNumber);
+    firstNumber = operate(num1, num2, operator);
+    secondNumber = '';
+    operator = '';
+    return firstNumber;
 }
 
 const add = (a, b) => a + b;
@@ -48,10 +84,3 @@ const operate = (num1, num2, operator) => {
         return divide(num1, num2);
 }
 
-function equals() {
-    let num1 = Number(firstNumber);
-    let num2 = Number(secondNumber);
-    firstNumber = operate(num1, num2, operator);
-    secondNumber = '';
-    return firstNumber;
-}
