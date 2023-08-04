@@ -15,7 +15,7 @@ body {
     height: 600px;
     width: 400px;
     padding: 32px;
-    gap: 32px;
+    gap: 16px;
     border-radius: 25px;
 }
 
@@ -37,9 +37,9 @@ body {
     box-sizing: border-box;
     flex-basis: 25%;
     border-radius: 50%;
-    font-weight: 200;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 600;
+    border: 8px solid #161614;
 }
 
 #zero {
