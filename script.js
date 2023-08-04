@@ -5,25 +5,29 @@ const equalButton = document.querySelector("#equal");
 const clearAll = document.querySelector("#AC");
 const clear = document.querySelector("#C");
 
-calcArray = [];
+let firstNumber = 0;
+let secondNumber = 0;
+let operator = '';
 
 numberButtons.forEach(button => {
     button.addEventListener("click", () => {
         display.textContent += button.textContent;
+        if (operator === '')
+            firstNumber = Number(display.textContent);
+        else
+            secondNumber = Number(display.textContent);
     })
 })
 
 operatorButtons.forEach(button => {
     button.addEventListener("click", () => {
-        calcArray.push(display.textContent);
-        calcArray.push(button.textContent);
+        operator = button.textContent;
         display.textContent = '';
     })
 })
 
 equalButton.addEventListener("click", () => {
-    calcArray.push(display.textContent);
-    operate(calcArray[0], calcArray[2], calcArray[1])
+    display.textContent = operate(firstNumber, secondNumber, operator);
 })
 
 
@@ -36,12 +40,12 @@ const divide = (a, b) => a / b;
 
 const operate = (num1, num2, operator) => {
     if (operator === "+")
-        add(num1, num2);
+        return add(num1, num2);
     else if (operator === "-")
-        subtract(num1, num2);
-    else if (operator === "*")
-        multiply(num1, num2);
+        return subtract(num1, num2);
+    else if (operator === "×")
+        return multiply(num1, num2);
     else if (operator === "/")
-        divide(num1, num2);
+        return divide(num1, num2);
 }
 
