@@ -19,12 +19,15 @@ numberButtons.forEach(button => {
 
 operatorButtons.forEach(button => {
     button.addEventListener("click", () => {
+        if (firstNumber != '' && secondNumber != '')
+            display.textContent = equals();
         operator = button.innerText;
     })
 })
 
 equalButton.addEventListener("click", () => {
     display.textContent = equals();
+    operator = '';
 })
 
 AC.addEventListener("click", () => clearAll())
@@ -65,7 +68,6 @@ function equals() {
     let num2 = Number(secondNumber);
     firstNumber = operate(num1, num2, operator);
     secondNumber = '';
-    operator = '';
     return firstNumber;
 }
 
