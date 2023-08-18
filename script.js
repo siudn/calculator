@@ -26,8 +26,11 @@ operatorButtons.forEach(button => {
 })
 
 equalButton.addEventListener("click", () => {
-    display.textContent = equals();
-    operator = '';
+    if (firstNumber !== '' && secondNumber !== '')
+    {
+        display.textContent = equals();
+        operator = '';
+    }
 })
 
 AC.addEventListener("click", () => clearAll())
