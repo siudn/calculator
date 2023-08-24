@@ -5,4 +5,4 @@ It took me a while to think through all the logic, but I eventually got there. D
 
 Maybe I'll make this a scientific calculator in the future, who knows?
 
-https://siudn.github.io/calculator/
+Link: https://siudn.github.io/calculator/
